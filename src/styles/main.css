@@ -1,0 +1,64 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fw {
+    width: 49%;
+    height: 100%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 5px;
+    border: 1px solid #000;
+}
+
+#root-react {
+    background: url('../images/react-logo.png') no-repeat right;
+    background-size: 150px 150px;
+}
+
+#root-angular-js {
+    background: url('../images/angular-js-logo.png') no-repeat right;
+    background-size: 130px 130px;
+}
+
+.vue {
+    background: url('../images/vue-logo.png') no-repeat right;
+    background-size: 150px 150px;
+}
+
+.upper-case {
+    color: #629462;
+}
+
+.lower-case {
+    margin-bottom: 5px;
+    color: #3737f7;
+}
+
+.fw-header {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+textarea {
+    resize: none;
+    color: #757373;
+    font-size: 13px;
+    border-color: #e5e5e5;
+    border-radius: 2px;
+    font-weight: 500;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.fw-texts {
+    display: inline-block;
+}
+
+.fw-block {
+    margin:15px;
+}

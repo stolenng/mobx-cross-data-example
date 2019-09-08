@@ -1,13 +1,21 @@
 <html>
-  <head>
-    <title>Todo App</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.18.2/antd.css"></link>
-  </head>
-  <body>
-    <div class="fw" id="root-react"></div>
-    <div class="fw" id="root-vue">
+<head>
+    <title>Mobx - Cross Ap Example</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+    <link href="/src/styles/main.css" rel="stylesheet">
+</head>
+<body>
+<div class="fw react" id="root-react"></div>
+<div class="fw vue">
+    <div id="root-vue"></div>
+</div>
+<div class="fw angular-js" id="root-angular-js">
+    <div ng-app="app">
+        <list></list>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="/static/bundle.js"></script>
-  </body>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="/static/bundle.js"></script>
+</body>
 </html>

@@ -1,68 +1,79 @@
 import React from "react";
-import { render } from "react-dom";
-import DevTools from "mobx-react-devtools";
-import TemplateList from "./models/TemplatesList";
-import TemplatesContainer from "./components/TemplatesController";
+import {render} from "react-dom";
+import templatesStore from "./mobx/TemplatesList";
+import TemplatesContainer from "./react/TemplatesController";
 import {Provider} from 'mobx-react';
-import {reaction, autorun} from 'mobx';
+import VueComponent from './vue/component';
+import {reaction} from 'mobx';
+import {LowerCaseText, UpperCaseText} from "./utils/utils";
 
-const store = new TemplateList();
-store.addTemplate('First Template!');
-store.addTemplate('Second Template!');
-store.addTemplate('Third Template!');
-store.addTemplate('LASTTT Template!');
-const templates = store.getTemplates;
+let reactApp, vueApp, angularJsScope;
 
+const initReact = () => {
+    reactApp = render(
+        <div>
+            <Provider store={templatesStore}>
+                <TemplatesContainer/>
+            </Provider>
+        </div>,
+        document.getElementById("root-react")
+    );
+};
 
+const initVue = () => {
+    vueApp = new Vue(VueComponent);
+};
 
+const initAngularJS = () => {
+    angular.module("app", []).directive('list', function () {
+       return {
+           controller: function ($scope) {
+               $scope.LowerCaseText = LowerCaseText;
+               $scope.UpperCaseText = UpperCaseText;
+               $scope.templates = templatesStore.getTemplates;
+               $scope.setText = function (text) {
+                   console.log(text);
+               };
+           },
+           templateUrl: 'src/angular-js/list.html'
+       }
+    });
+};
 
-render(
-  <div>
-      <Provider store={store}>
-        <TemplatesContainer  />
-      </Provider>
-      <DevTools/>
-  </div>,
-    document.getElementById("root-react")
-);
+const initReactions = () => {
+    reaction(
+        () => templatesStore.getTemplates,
+        templates => updateFrameworks(templates)
+    );
+};
 
-const getLength = () => templates.length;
+const updateFrameworks = (templates) => {
+    console.log('update framework')
+    //Vue
+    vueApp.$data.templates = templates;
 
-const wow = new Vue({
-    el: '#root-vue',
-    data: {
-        templates: store.getTemplates,
-        length: getLength(),
-        message: 'nani'
-    },
-    template: "<div> VUE <div>{{length}} {{message}}</div> <div v-for=\"t in templates\">{{t.text}}</div></div>",
-    mounted: () => console.log('yo')
-});
+    //Angular JS
+    const angularScope = angular.element(document.getElementsByClassName('angular-js-scope')).scope();
+    console.log(angularScope, 'test')
+    angularScope.templates = templates;
+    angularScope.$apply();
+};
 
-reaction(
-    () => store.getTemplates.length,
-    (len) => {
-        console.log(templates,len, templates.length)
-        wow.$data.length = len;
-    }
-);
-
-reaction(
-    () => store.getTemplates,
-    templ => {
-        console.log('tfi', templ)
-        wow.$data.templates = templ;
-    }
-)
+const init = () => {
+    initReact();
+    initVue();
+    initAngularJS();
+    initReactions();
+};
 
 setTimeout(() => {
-    store.addTemplate('SUPRISE Template!');
-    console.log(wow, 'added');
-    wow.$forceUpdate()
+    templatesStore.addTemplate('SUPRISE Template!');
 }, 3500)
 
 
+init();
 
-
-window.vm = wow;
-window.store = store;
+//debugging
+window.vueApp = vueApp;
+window.angularJsApp = angularJsScope;
+window.store = templatesStore;

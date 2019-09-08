@@ -1,0 +1,12 @@
+<div class="angular-js-scope">
+    <div>
+        <div class="fw-header">Angular JS - {{templates.length}}</div>
+        <div class="fw-block" ng-repeat="template in templates track by template.id">
+            <textarea ng-model-options="{ getterSetter: true }" ng-model="template.text" ng-change="$ctrl.setText(template)"></textarea>
+            <div class="fw-texts">
+                <div class="lower-case">{{LowerCaseText}} - {{template.text.toLowerCase()}}</div>
+                <div class="upper-case">{{UpperCaseText}} - {{template.text.toUpperCase()}}</div>
+            </div>
+        </div>
+    </div>
+</div>
