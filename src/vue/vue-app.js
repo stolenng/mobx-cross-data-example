@@ -20,4 +20,8 @@ const VueComponent = {
     `
 };
 
-export default VueComponent;
+const initVue = () => {
+    return new Vue(VueComponent);
+};
+
+export default initVue;
