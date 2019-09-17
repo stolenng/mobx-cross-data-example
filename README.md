@@ -22,5 +22,6 @@ Screenshot
 
 ![alt text](https://i.ibb.co/zH9w2YX/Screen-Shot-2019-09-17-at-9-25-00.png)
 
-Here is a Demo Link:
+Demo:
+===
 - http://mobx-cross-data.georgy-glezer.com/
