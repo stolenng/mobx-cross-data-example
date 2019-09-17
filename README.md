@@ -17,11 +17,11 @@ Frameworks/Ui libraries Used:
 You can play with the store, by opening the console and accessing `window.store`,
 adding a new template is simple as `window.store.addTemplate('New Template')`.
 
+Demo:
+===
+- http://mobx-cross-data.georgy-glezer.com/
+
 Screenshot
 ====
 
 ![alt text](https://i.ibb.co/zH9w2YX/Screen-Shot-2019-09-17-at-9-25-00.png)
-
-Demo:
-===
-- http://mobx-cross-data.georgy-glezer.com/
