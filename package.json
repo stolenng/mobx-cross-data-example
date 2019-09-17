@@ -4,8 +4,7 @@
   "description": "Mobx example - sharing 1 data store through different frameworks/ui libraries",
   "scripts": {
     "start": "webpack-dev-server --hot --open",
-    "build": "webpack",
-    "lint": "eslint src"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -35,6 +34,8 @@
     "mobx-react": "^5.2.3",
     "mobx-react-devtools": "^6.0.1",
     "mobx-vue": "^2.0.9",
+    "mustache": "^3.1.0",
+    "preact": "^8.5.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "vue": "^2.6.10",

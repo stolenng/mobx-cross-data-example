@@ -1,5 +1,5 @@
 import templatesStore from "../mobx/TemplatesList";
-import {LowerCaseText, UpperCaseText} from "../utils/utils";
+import {LowerCaseText, UpperCaseText} from "../app/utils";
 
 const initAngularJS = () => {
     angular.module("app", []).directive('list', function () {

@@ -1,7 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 import {Input} from 'antd';
-import {LowerCaseText, UpperCaseText} from "../utils/utils";
+import {LowerCaseText, UpperCaseText} from "../app/utils";
 
 const {TextArea} = Input;
 

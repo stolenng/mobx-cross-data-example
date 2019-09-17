@@ -3,12 +3,13 @@ import {autorun} from 'mobx';
 import initAngularJS from "../angular-js/angular-js-app";
 import initVue from "../vue/vue-app";
 import initReact from "../react/react-app";
+import initPreact from '../preact/preact-app';
 
-let reactApp, vueApp;
+let reactApp, vueApp, preactApp;
 
 export const initReactions = () => {
     autorun(
-        ()=> updateFrameworks(templatesStore.getTemplates)
+        () => updateFrameworks(templatesStore.getTemplates)
     );
 };
 
@@ -24,11 +25,16 @@ const updateFrameworks = (templates) => {
         angularScope.updateValues();
         angularScope.$evalAsync();
     }
+
+    //Preact
+    console.log(preactApp.nodeName.forceUpdate())
+    preactApp.forceUpdate();
 };
 
 export const init = () => {
     reactApp = initReact();
     vueApp = initVue();
+    preactApp = initPreact();
     initAngularJS();
     initReactions();
 };

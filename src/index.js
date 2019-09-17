@@ -1,5 +1,5 @@
 import templatesStore from "./mobx/TemplatesList";
-import {init} from './utils/framework-handler';
+import {init} from './app/framework-handler';
 
 setTimeout(() => {
     templatesStore.addTemplate('SUPRISE Template!');

@@ -1,5 +1,5 @@
 import templatesStore from '../mobx/TemplatesList';
-import {UpperCaseText, LowerCaseText} from '../utils/utils';
+import {UpperCaseText, LowerCaseText} from '../app/utils';
 
 const VueComponent = {
     el: '#root-vue',

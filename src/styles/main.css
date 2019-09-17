@@ -62,3 +62,7 @@ textarea {
 .fw-block {
     margin:15px;
 }
+
+script {
+    display: block;
+}
