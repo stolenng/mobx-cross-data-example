@@ -1,6 +1,6 @@
 import React from "react";
 import {observer} from "mobx-react";
-import TemplatesList from "./TemplatesList";
+import TemplateItem from "./TemplateItem";
 import {inject} from "mobx-react";
 
 @inject('store')
@@ -11,7 +11,7 @@ class TemplatesContainer extends React.Component {
 
         return (
             <div>
-                <TemplatesList templates={templates || []}/>
+                <TemplateItem templates={templates || []}/>
             </div>
         );
     }

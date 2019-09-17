@@ -1,17 +1,19 @@
 import templatesStore from "../mobx/TemplatesList";
 import {LowerCaseText, UpperCaseText} from "../app/utils";
+import {autorun} from "mobx/lib/mobx";
 
 const initAngularJS = () => {
     angular.module("app", []).directive('list', function () {
         return {
             controller: function ($scope) {
                 $scope.LowerCaseText = LowerCaseText;
-                $scope.fakeAngularJsObjects = {};
                 $scope.UpperCaseText = UpperCaseText;
-                $scope.updateValues = () => {
+                $scope.fakeAngularJsObjects = {};
+                autorun(() => {
+                    $scope.templates = templatesStore.getTemplates;
                     $scope.templates.forEach(t => $scope.fakeAngularJsObjects[t.id] = t.text);
-                };
-                $scope.templates = templatesStore.getTemplates;
+                    $scope.$evalAsync();
+                });
                 $scope.setText = (template) => {
                     template.setText($scope.fakeAngularJsObjects[template.id]);
                 };

@@ -1,5 +1,5 @@
 import React from "react";
-import TemplatesContainer from "./TemplatesController";
+import TemplatesContainer from "./TemplateList";
 import {Provider} from 'mobx-react';
 import {render} from "react-dom";
 import templatesStore from "../mobx/TemplatesList";

@@ -1,5 +1,5 @@
 
-Mobx Data Sharing Example
+Separation of UI and DATA with MobX
 =====================
 --url in the end
 

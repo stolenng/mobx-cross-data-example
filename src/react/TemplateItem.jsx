@@ -6,7 +6,7 @@ import {LowerCaseText, UpperCaseText} from "../app/utils";
 const {TextArea} = Input;
 
 @observer
-class TemplatesList extends React.Component {
+class TemplateItem extends React.Component {
     render() {
         const {templates} = this.props;
 
@@ -30,4 +30,4 @@ class TemplatesList extends React.Component {
     }
 }
 
-export default TemplatesList;
+export default TemplateItem;

@@ -1,8 +1,14 @@
 import templatesStore from '../mobx/TemplatesList';
 import {UpperCaseText, LowerCaseText} from '../app/utils';
+import {autorun} from 'mobx';
 
 const VueComponent = {
     el: '#root-vue',
+    mounted: function () {
+        autorun(() => {
+            this.$set(this, 'templates', templatesStore.getTemplates)
+        });
+    },
     data: {
         templates: templatesStore.getTemplates
     },
