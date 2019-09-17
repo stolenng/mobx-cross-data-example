@@ -1,5 +1,5 @@
 
-Separation of UI and DATA with MobX
+Separation of Ui and Data with MobX
 =====================
 Example of how i use **MobX** as my state manager allowing me to share 1 data store
 between 4 different framework/ui libraries.
@@ -16,6 +16,9 @@ Frameworks/Ui libraries Used:
 
 You can play with the store, by opening the console and accessing `window.store`,
 adding a new template is simple as `window.store.addTemplate('New Template')`.
+
+Screenshot
+====
 
 ![alt text](https://i.ibb.co/zH9w2YX/Screen-Shot-2019-09-17-at-9-25-00.png)
 
