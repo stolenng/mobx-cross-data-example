@@ -1,8 +1,12 @@
 
 Separation of UI and DATA with MobX
 =====================
-Example of how i use MobX to share 1 data store
+Example of how i use **MobX** as my state manager allowing me to share 1 data store
 between 4 different framework/ui libraries.
+
+The app is basically have 1 store that contains list of "templates", each "template" has a name.
+
+You can edit each template in framework/ui library textarea and see the outcome in uppercase(green), and lowercase(blue).
 
 Frameworks/Ui libraries Used:
 - React
@@ -10,9 +14,10 @@ Frameworks/Ui libraries Used:
 - AngularJS
 - Preact
 
-Example 
-=====================
+You can play with the store, by opening the console and accessing `window.store`,
+adding a new template is simple as `window.store.addTemplate('New Template')`.
 
-Soon
+![alt text](https://i.ibb.co/zH9w2YX/Screen-Shot-2019-09-17-at-9-25-00.png)
 
-=====================
+Here is a Demo Link:
+- http://mobx-cross-data.georgy-glezer.com/
