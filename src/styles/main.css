@@ -16,18 +16,25 @@ body {
 
 #root-react {
     background: url('../images/react-logo.png') no-repeat right;
-    background-size: 150px 150px;
+    background-size: 200px 150px;
 }
 
 #root-angular-js {
     background: url('../images/angular-js-logo.png') no-repeat right;
-    background-size: 130px 130px;
+    background-size: 200px 130px;
 }
 
 .vue {
     background: url('../images/vue-logo.png') no-repeat right;
     background-size: 150px 150px;
 }
+
+#root-preact {
+    background: url('https://raw.githubusercontent.com/preactjs/preact/8b0bcc927995c188eca83cba30fbc83491cc0b2f/logo.svg?sanitize=true') no-repeat right;
+    background-size: 250px 150px;
+}
+
+
 
 .upper-case {
     color: #629462;

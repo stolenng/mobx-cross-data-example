@@ -4,5 +4,7 @@
     "es2015",
     "stage-1"
   ],
-  "plugins": ["transform-decorators-legacy"]
+  "plugins": [
+    "transform-decorators-legacy"
+  ]
 }

@@ -10,7 +10,7 @@ initAngularJS();
 initPreact();
 
 setTimeout(() => {
-    templatesStore.addTemplate('SUPRISE Template!');
+    // templatesStore.addTemplate('SUPRISE Template!');
 }, 3500)
 
 
